@@ -10,7 +10,7 @@ router.post('/products', upload.single('thumbnail'), async (req, res) => {
     try {
         const file = req.file
         if(!file) throw new Error('Por favor ingresa una imagen')
-        const thumbnail = `${req.protocol}://${req.get('Host')}/static/${file.originalname.replace(/ /g, '')}`;
+        const thumbnail = `${req.protocol}s://${req.get('Host')}/static/${file.originalname.replace(/ /g, '')}`;
         const product = JSON.parse(req.body.product)
         const productCreated = await products.save({ ...product, thumbnail })
         res.json({
@@ -68,7 +68,7 @@ router.patch('/products/:id', upload.single('thumbnail'), async (req, res) => {
         const file = req.file
         let productUpdated
         if(file) {
-            const thumbnail = `${req.protocol}://${req.get('Host')}/static/${file.originalname.replace(/ /g, '')}`;
+            const thumbnail = `${req.protocol}s://${req.get('Host')}/static/${file.originalname.replace(/ /g, '')}`;
             productUpdated = await products.updateById(parseInt(id), {...productToUpdate, thumbnail})
         }else {
             productUpdated = await products.updateById(parseInt(id), productToUpdate)
