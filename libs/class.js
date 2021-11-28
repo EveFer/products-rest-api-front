@@ -73,8 +73,8 @@ class Contenedor {
             const newProducts = products.filter(product => product.id !== id)
             const { thumbnail } = productToDelete
             console.log(thumbnail)
-            console.log(thumbnail.split('http://localhost:8080/static/')[1])
-            await fs.promises.unlink(`uploads/${thumbnail.split('http://localhost:8080/static/')[1]}`)
+            console.log(thumbnail.split('https://products-rest-multer.herokuapp.com/static/')[1])
+            await fs.promises.unlink(`uploads/${thumbnail.split('https://products-rest-multer.herokuapp.com/static/')[1]}`)
             await fs.promises.writeFile(this.file, JSON.stringify(newProducts, null, 2))
             return 'Producto Eliminado'
         } catch (error) {
@@ -100,8 +100,8 @@ class Contenedor {
             if(!productToUpdate) throw new Error('El producto no existe')
             if(newData.thumbnail) {
                 const { thumbnail: oldThumbnail } = productToUpdate
-                let nameImageNew = newData.thumbnail.split('http://localhost:8080/static/')[1]
-                let nameImageOld = oldThumbnail.split('http://localhost:8080/static/')[1]
+                let nameImageNew = newData.thumbnail.split('https://products-rest-multer.herokuapp.com/static/')[1]
+                let nameImageOld = oldThumbnail.split('https://products-rest-multer.herokuapp.com/static/')[1]
                 if( nameImageNew  !== nameImageOld)  await fs.promises.unlink(`uploads/${nameImageOld}`)
             }
             const indexProduct = products.findIndex(product => product.id === id);
