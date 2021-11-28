@@ -1,5 +1,5 @@
 
-const URL_BASE = 'http://localhost:8080/api'
+const URL_BASE = 'https://products-rest-multer.herokuapp.com/api'
 
 function createProduct (product) {
     const url = `${URL_BASE}/products`
