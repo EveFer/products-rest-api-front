@@ -72,6 +72,8 @@ class Contenedor {
             if(!productToDelete) throw new Error('El producto no existe')
             const newProducts = products.filter(product => product.id !== id)
             const { thumbnail } = productToDelete
+            console.log(thumbnail)
+            console.log(thumbnail.split('http://localhost:8080/static/')[1])
             await fs.promises.unlink(`uploads/${thumbnail.split('http://localhost:8080/static/')[1]}`)
             await fs.promises.writeFile(this.file, JSON.stringify(newProducts, null, 2))
             return 'Producto Eliminado'
