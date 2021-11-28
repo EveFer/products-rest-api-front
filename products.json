@@ -2,13 +2,13 @@
   {
     "title": "Salsa Casera La costeña",
     "price": 18,
-    "thumbnail": "http://localhost:8080/static/salsa-casera.jpeg",
+    "thumbnail": "https://products-rest-multer.herokuapp.com/static/salsa-casera.jpeg",
     "id": 1
   },
   {
     "title": "Sabritas Limon",
     "price": 14,
-    "thumbnail": "http://localhost:8080/static/sabritas-limon.png",
+    "thumbnail": "https://products-rest-multer.herokuapp.com/static/sabritas-limon.png",
     "id": 2
   }
 ]
