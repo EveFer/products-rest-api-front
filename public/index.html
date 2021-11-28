@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Products</title>
+</head>
+
+<body>
+  <div class="alert alert-success hidden" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <div class="alert alert-danger hidden" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <section class="container">
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <h1 class="text-center my-3">Registro de Productos</h1>
+      </div>
+      <div class="col-12 col-lg-5">
+        <form action="" enctype="multipart/form-data" class="rounded border border-dark p-5 form-product">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input name="title" type="text" class="form-control" id="title">
+          </div>
+          <div class="form-group">
+            <label for="price">Precio</label>
+            <input name="price" type="number" min="1" class="form-control" id="price">
+          </div>
+          <div class="form-group">
+            <label for="url">URL</label>
+            <input name="thumbnail" type="file" class="form-control" id="thumbnail">
+          </div>
+          <div>
+            <button type="button" id="btn-save" class="btn btn-primary">Guardar producto</button>
+            <button type="button" id="btn-patch" class="btn btn-primary">Editar producto</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 col-lg-7">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody id="wrapper-products">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
