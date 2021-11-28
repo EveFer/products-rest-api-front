@@ -23,7 +23,6 @@ document.getElementById('btn-save').addEventListener('click', async (e) => {
 document.getElementById('btn-patch').addEventListener('click', async (e) => {
     const {idProduct} = e.target.dataset
     const dataProduct = getDataForm()
-    console.log(JSON.stringify(dataProduct.product))
     let formData = new FormData()
     if(dataProduct.thumbnail) formData.append('thumbnail', thumbnail)
     formData.append('product', JSON.stringify(dataProduct.product))

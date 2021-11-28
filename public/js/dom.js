@@ -85,10 +85,8 @@ const printTable = async () => {
 
 const removeProduct = async (event) => {
     const {id} = event.target.dataset
-    console.log(id)
     const response = await deleteProduct(id)
     const json = await response.json()
-    console.log(response)
     if(response.status === 200) {
         showAlertSuccess(json.message)
         await printTable()
